@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TG - @CRICSPORTCENTRAL</title>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <style>
+    #video {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <video id="video" controls></video>
+
+  <select id="qualitySelect">
+    <option value="https://vkvsd67.okcdn.ru/hls/7579245742634.m3u8/sig/Td_x2GwtEaQ/expires/1733541324881/srcIp/139.84.172.25/urls/185.226.52.98/clientType/13/srcAg/CHROME/mid/9127011298090/7579245742634_lowest/index.m3u8?p">240p</option>
+    <option value="https://vkvsd67.okcdn.ru/hls/7579245742634.m3u8/sig/Td_x2GwtEaQ/expires/1733541324881/srcIp/139.84.172.25/urls/185.226.52.98/clientType/13/srcAg/CHROME/mid/9127011298090/7579245742634_low/index.m3u8?p">360p</option>
+    <option value="https://vkvsd67.okcdn.ru/hls/7579245742634.m3u8/sig/Td_x2GwtEaQ/expires/1733541324881/srcIp/139.84.172.25/urls/185.226.52.98/clientType/13/srcAg/CHROME/mid/9127011298090/7579245742634_medium/index.m3u8?p">480p</option>
+    <option value="https://vkvsd67.okcdn.ru/hls/7579245742634.m3u8/sig/Td_x2GwtEaQ/expires/1733541324881/srcIp/139.84.172.25/urls/185.226.52.98/clientType/13/srcAg/CHROME/mid/9127011298090/7579245742634_high/index.m3u8?p">720p</option>
+    <option value="https://vkvsd14.okcdn.ru/cmaf/7381061929703/sig/JlPj5oTsuqw/srcIp/3.108.194.217/urls/185.226.53.64/expires/1733778651433/clientType/13/srcAg/CHROME/fromCache/1/mid/8776469523431/id/7381061929703/get/COfX5PK2_wEQ6AcYAzIICgYIgAUQ6AI6BAjE2AJaBggBEAIoF2ICCBBpbYZ53zFQOQ/track.m3u8">1080p</option>
+  </select>
+
+  <script>
+    var video = document.getElementById('video');
+    var qualitySelect = document.getElementById('qualitySelect');
+
+    qualitySelect.addEventListener('change', function() {
+      var selectedSource = qualitySelect.options[qualitySelect.selectedIndex].value;
+      var hls = new Hls();
+      if (Hls.isSupported()) {
+        hls.loadSource(selectedSource);
+        hls.attachMedia(video);
+      } else {
+        video.src = selectedSource;
+        video.play();
+      }
+    });
+
+    qualitySelect.dispatchEvent(new Event('change')); // Load default source
+  </script>
+
+  <script>
+    if (confirm("Join Our Telegram Channel @CRICSPORTCENTRAL For More Links")) {
+      window.location.href = "https://t.me/CRICSPORTCENTRAL";
+    }
+  </script>
+
+  <div style="background-color: #0074d9; text-align: center; padding: 10px;">
+    <a href="https://telegram.me/CRICSPORTCENTRAL" target="_blank">
+      <button id="joinTelegramButton" style="background-color: #fff; color: #0074d9; border: 2px solid #0074d9; padding: 5px 10px;">Join
+        Telegram</button>
+    </a>
+  </div>
+</body>
+</html>
